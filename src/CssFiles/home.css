@@ -1,0 +1,75 @@
+.home {
+background-image: url('../images/shutterstock_2189773743 1.jpg');
+width: 100%;
+height: 100vh;
+position: relative;
+}
+.home_logo{
+    position: absolute;
+width: 236px;
+height: 38px;
+left: 70px;
+top: 25px;
+background: url('../images/LOGO-02 3.jpg');
+}
+.home_line{ 
+    position: absolute;
+height: 0px;
+left: 70px;
+right: 70px;
+top: 89px;
+
+/* off black */
+
+border: 1px solid #1A1A1A;
+}
+
+.bran_logo{ 
+    position: absolute;
+width: 299px;
+height: 299px;
+left: 1076px;
+top: 473px;
+
+background: url('../images/LOGO-40 1.png');
+mix-blend-mode: multiply;
+}
+.home_resumeAdd {
+    display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 18px 60px;
+gap: 20px;
+
+position: absolute;
+width: 464px;
+height: 60px;
+left: calc(50% - 464px/2);
+top: 513px;
+
+/* off black */
+color: white;
+background: #1A1A1A;
+border-radius: 8px;
+}
+.home_btn {
+    width: 212px;
+height: 24px;
+position: relative;
+left: 60px;
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}

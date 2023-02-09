@@ -1,0 +1,165 @@
+.resume{ 
+    position: relative;
+    background: #FFFFFF;
+}
+.resume_info {
+    box-sizing: border-box;
+
+position: absolute;
+width: 822px;
+height: 1080px;
+left: calc(50% - 822px/2);
+top: 54px;
+
+background: #FFFFFF;
+border: 0.8px solid #000000;
+}
+.resume_name{
+    position: absolute;
+width: 123px;
+height: 42px;
+left: 80px;
+top: 68px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 34px;
+line-height: 42px;
+/* identical to box height */
+
+
+color: #F93B1D;
+}
+.resume_lastname {
+    position: absolute;
+width: 166px;
+height: 42px;
+left: 223px;
+top: 68px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 34px;
+line-height: 42px;
+/* identical to box height */
+
+
+color: #F93B1D;
+}
+.resume_img {
+    position: absolute;
+    width: 246px;
+    height: 246px;
+    left: 501px;
+    top: 48px;
+    
+  
+    border-radius: 133px;
+}
+.emailIcon {
+    position: absolute;
+    left: 10.33%;
+    right: 1.33%;
+    top: 13.102%;
+    bottom: 8.33%;
+    
+}
+.resume_email{ 
+    position: absolute;
+width: 187px;
+height: 21px;
+left: 111px;
+top: 127px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+
+/* off black */
+
+color: #1A1A1A;
+}
+.phoneIcon {
+    position: absolute;
+left: 10.33%;
+right: 9.04%;
+top: 15.9%;
+bottom: 7.77%;
+
+
+}
+.resume_phone{ 
+    position: absolute;
+width: 151px;
+height: 21px;
+left: 111px;
+top: 158px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+
+/* off black */
+
+color: #1A1A1A;
+
+}
+.resume_aboutme{
+    position: absolute;
+width: 118px;
+height: 22px;
+left: 80px;
+top: 213px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #F93B1D;
+
+}
+.resume_aboutmeinfo{ 
+    position: absolute;
+width: 432px;
+height: 72px;
+left: 80px;
+top: 250px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+/* or 138% */
+
+text-transform: lowercase;
+
+color: #000000;
+}
+.resume_experience {
+    position: absolute;
+    width: 143px;
+    height: 22px;
+    left: 80px;
+    top: 365px;
+    
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    
+    
+    color: #F93B1D;
+}
