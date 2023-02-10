@@ -5,10 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Personal from './Pages/Personal';
 import Resume from './Pages/Resume';
+import Experience from './Pages/Experience';
+import HeadPage from './Pages/HeadPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Resume/>
+    <HeadPage/>
   </React.StrictMode>
 );
 

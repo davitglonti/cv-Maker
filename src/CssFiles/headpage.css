@@ -1,0 +1,75 @@
+.headpage {
+    display: flex;
+    justify-content: space-between;
+}
+.headRight{
+    position: absolute;
+width: 822px;
+height: 1080px;
+right: 0px;
+top: 0px;
+
+background: #FFFFFF;
+}
+.lefticon {
+    position: absolute;
+   
+
+left: 62px;
+top: 57px;
+font-size: 30px;
+}
+.personalPage{
+    position: absolute;
+    margin: 30px;
+}
+.headerInfo {
+    position: absolute;
+width: 179px;
+height: 29px;
+left: 149px;
+top: 47px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+
+/* off black */
+
+color: #1A1A1A;
+}
+.headerNumber {
+    
+position: absolute;
+width: 29px;
+height: 24px;
+left: 920px;
+top: 49px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height */
+
+text-align: right;
+
+/* off black */
+
+color: #1A1A1A;
+
+}
+.headline {
+    position: absolute;
+width: 798px;
+height: 0px;
+left: 150px;
+top: 88px;
+
+/* off black */
+
+border: 1px solid #1A1A1A;
+}

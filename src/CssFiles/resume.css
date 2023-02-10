@@ -163,3 +163,156 @@ color: #000000;
     
     color: #F93B1D;
 }
+
+.resume_experencename {
+    position: absolute;
+width: 178px;
+height: 20px;
+left: 80px;
+top: 402px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+
+
+color: #1A1A1A;
+
+}
+.resume_experienceyear{
+    position: absolute;
+    width: 183px;
+    height: 19px;
+    left: 80px;
+    top: 429px;
+    
+    font-family: 'Helvetica Neue';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: #919191;   
+}
+.resume_experienceabout {
+    position: absolute;
+width: 662px;
+height: 66px;
+left: 80px;
+top: 464px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+/* or 138% */
+
+text-transform: capitalize;
+
+color: #000000;
+
+}
+.resume_life {
+    position: absolute;
+    width: 662px;
+    height: 0px;
+    right: 80px;
+    top: 562px;
+
+    border: 1px solid #C8C8C8;
+    
+}
+.resume_education {
+    position: absolute;
+width: 115px;
+height: 22px;
+left: 80px;
+top: 588px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #F93B1D;
+}
+.resume_univesity{ 
+    position: absolute;
+width: 349px;
+height: 20px;
+left: 80px;
+top: 625px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* off black */
+
+color: #1A1A1A;
+
+}
+.resume_role {
+    position: absolute;
+width: 81px;
+height: 20px;
+left: 445px;
+top: 625px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* off black */
+
+color: #1A1A1A;
+
+}
+
+.resume_Periodofstudy {
+    position: absolute;
+width: 84px;
+height: 19px;
+left: 80px;
+top: 652px;
+
+font-family: 'Helvetica Neue';
+font-style: italic;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #919191;
+}
+.resume_iLearned{
+    position: absolute;
+width: 662px;
+height: 88px;
+left: 80px;
+top: 687px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+/* or 138% */
+
+text-transform: lowercase;
+
+color: #000000;
+}

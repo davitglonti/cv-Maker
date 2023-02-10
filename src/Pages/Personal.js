@@ -1,8 +1,12 @@
-import React from 'react'
-import { AiOutlineLeft } from 'react-icons/ai';
+import React,{useState} from 'react'
+import { BiError } from 'react-icons/bi';
+
 import '../CssFiles/personal.css'
 import { useForm } from "react-hook-form";
-const Personal = () => {
+const Personal = ({name,lastname,aboutMe,email,phoneNumber,image}) => {
+ 
+
+
     const {
         register,
         handleSubmit,
@@ -10,59 +14,63 @@ const Personal = () => {
         formState: { errors }
       } = useForm();
       const onSubmit = (data) => {
-        console.log(data);
+       // console.log(data);
       }; // your form submit function which will invoke after successful validation
-      console.log(watch("example")); // you can watch individual input by pass the name of the input
+     // console.log(watch("example")); // you can watch individual input by pass the name of the input
     
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className='personal'>
     {/* register your input into the hook by invoking the "register" function */}
     <div className='input_namelastname'>
         <div >
-   <label> სახელი</label>
-    <input  {...register("name",{ required: true })} />
-    <h5  className='input_info'>მინიმუმ 2 ასო, ქართული ასოები</h5>
-    {errors.name && <p>This aaaj is required</p>} 
+   <label style={{position:'relative', width:'371px'}} className={errors.name ? "label-error": ''}> სახელი  
+ 
+    <input  {...register("name",{ required: true, minLength:2, pattern:/[ა-ჰ]/ })} onChange={(e)=>name(e.target.value)}/>
+    <h5  className='input_info'>მინიმუმ 2 ასო, ქართული ასოები  </h5>
+    {errors.name && <BiError className='errormessage'/>}
+ </label>
     
     </div>
     
     {/* include validation with required or other standard HTML validation rules */}
     <div>
-   <label >გვარი </label>
-    <input {...register("exampleRequired", { required: true, maxLength: 10, })}  />
+   <label style={{position:'relative', width:'371px'}} className={errors.exampleRequired && "label-error"}>გვარი 
+    <input {...register("exampleRequired", { required: true,minLength:2, pattern:/[ა-ჰ]/ })} onChange={(e)=>lastname(e.target.value)} />
     <h5  className='input_info'>მინიმუმ 2 ასო, ქართული ასოები</h5>
     {/* errors will return when field validation fails  */}
-    {errors.exampleRequired && <p>This field is required</p>}
+    {errors.exampleRequired && <BiError className='errormessage'/>}
+    </label>
     </div>
     </div>
         <div className='upload_zone'> 
         <label>პირადი ფოტოს ატვირთვა</label>
       
         <label className="custom-file-upload">
-          <input type="file"  style={{display:"none"}}/>
+          <input type="file"  style={{display:"none"}} className={errors.email && "input-error"}  {...register("image", { required: true, })} onChange={(event)=>image(event.target.files[0])}/>
           <div className='upload_img'><h3 className='uploadtxt'>ატვირთვა</h3>  </div>
+         {errors.image && <p>This field is required</p>}
         </label>
         </div>
 
         <label className="custom-file-upload">ჩემ შესახებ (არასავალდებულო) </label>
-          <input type="text"  className='Aboutme'/>
+          <input type="text"  className='Aboutme' onChange={(e)=>aboutMe(e.target.value)} />
          
 
-          <label> ელ.ფოსტა</label>
-    <input type='email'  {...register("example",{ required: true,   pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })} />
+          <label className={errors.email && "label-error"} style={{position:'relative'}}> ელ.ფოსტა
+    <input type='email' className={errors.email && "input-error"}  {...register("email",{ required: true,   pattern: /^[a-z0-9](\.?[a-z0-9]){5,}@redberry\.ge$/i })} onChange={(e)=>email(e.target.value)}/>
     <h5  className='input_info'>უნდა მთავრდებოდეს @redberry.ge-ით</h5>
-    {errors.example && <p>This aaaj is required</p>} 
-
+    {errors.email && <BiError className='errormessage'/>}
+</label>
     {/* include validation with required or other standard HTML validation rules */}
-   <label>მობილურის ნომერი </label>
-    <input {...register("exampleRequir", { required: true,})} />
+   <label  className={errors.email && "label-error"} style={{position:'relative'}}>მობილურის ნომერი 
+    <input {...register("mobilenumber", { required: true, pattern: /^(\+?995)?(79\d{7}|5\d{8})$/})} onChange={(e)=>phoneNumber(e.target.value)} />
     <h5  className='input_info'>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</h5>
     
     {/* errors will return when field validation fails  */}
-    {errors.exampleRequir && <p>This field is required</p>}
+    {errors.mobilenumber && <BiError className='errormessage'/>}
+</label>
 
-
-    <input type="submit" style={{backgroundColor:'rgba(107, 64, 227, 1)'}}/>
+    <button type="submit" className='submit' ><h5 className='btn_txt'>შემდეგ</h5> </button>
   </form>
 /*
     <div className='personal'>
