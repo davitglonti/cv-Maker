@@ -3,9 +3,14 @@ import { BiError } from 'react-icons/bi';
 
 import '../CssFiles/personal.css'
 import { useForm } from "react-hook-form";
-const Personal = ({name,lastname,aboutMe,email,phoneNumber,image}) => {
+const Personal = ({name,lastname,aboutMe,email,phoneNumber,image,pageNumber,setPageNumber}) => {
  
+  console.log(pageNumber)
 
+  const personalCheck = () => {
+   console.log('aa')
+   setPageNumber(pageNumber+1)
+  }
 
     const {
         register,
@@ -70,7 +75,7 @@ const Personal = ({name,lastname,aboutMe,email,phoneNumber,image}) => {
     {errors.mobilenumber && <BiError className='errormessage'/>}
 </label>
 
-    <button type="submit" className='submit' ><h5 className='btn_txt'>შემდეგ</h5> </button>
+    <button type="submit" className='submit' ><h5 className='btn_txt' onClick={()=>personalCheck()}>შემდეგ</h5> </button>
   </form>
 /*
     <div className='personal'>

@@ -48,8 +48,13 @@ input[type=text], select {
       sans-serif;
      
   }
+  .persona {
+    position: absolute;
+    left: 30px;
+  }
   .personalPage {
     position: absolute;
+    left: 10px;
     
   }
   form {

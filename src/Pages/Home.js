@@ -12,7 +12,7 @@ const Home = () => {
         <div className='bran_logo'></div>
         
         <button className='home_resumeAdd'>
-        <Link to={'/Personal'} className='home_btn' style={{paddingLeft: 13, textDecoration: 'none'}}> რეზიუმეს დამატება</Link>
+        <Link to={'/HeadPage'} className='home_btn' style={{paddingLeft: 13, textDecoration: 'none'}}> რეზიუმეს დამატება</Link>
            </button>
     </div>
   )
