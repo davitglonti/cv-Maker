@@ -28,7 +28,7 @@ font-size: 30px;
 width: 179px;
 height: 29px;
 left: 149px;
-top: 47px;
+top: 35px;
 
 font-family: 'Helvetica Neue';
 font-style: normal;
@@ -72,4 +72,115 @@ top: 88px;
 /* off black */
 
 border: 1px solid #1A1A1A;
+}
+.AddexpForm {
+    position: relative;
+ left: 790px;
+ top: 50px;
+}
+.prevBtn {
+    position: relative;
+    left: 650px;
+    top: 350px; 
+     
+
+ 
+width: 151px;
+height: 48px;
+
+bottom: 65px;
+
+background: #6B40E3;
+border-radius: 4px;
+}
+.prevBtns{
+    position: relative;
+    left: 800px;
+    top: 180px; 
+     
+
+ 
+width: 151px;
+height: 48px;
+
+bottom: 65px;
+
+background: #6B40E3;
+border-radius: 4px;
+}
+.buttontext {
+    font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+position: relative;
+top: -25px;
+letter-spacing: 0.08em;
+
+color: #FFFFFF;
+}
+
+.prevbtn{
+    position: relative;
+}
+.finalresume {
+    position: relative;
+    left: 50%;
+}
+.finalresumecheck {
+    box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 28px 30px 30px;
+gap: 10px;
+
+position: absolute;
+width: 427px;
+height: 167px;
+left: 500px;
+top: 53px;
+
+background: #FFFFFF;
+border: 1px solid #E4E4E4;
+box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+}
+.resumesucces {
+    width: 364px;
+height: 86px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 28px;
+line-height: 43px;
+/* or 154% */
+
+
+/* off black */
+
+color: #1A1A1A;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.checkexit {
+    position: absolute;
+left: 90.18%;
+right: 17.18%;
+top: 10.18%;
+bottom: 17.19%;
+font-size: 30px;
+
+
 }

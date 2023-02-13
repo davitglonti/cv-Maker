@@ -60,7 +60,6 @@ const Resume = ({name,lastName,email,phoneNumber,image,aboutinfo,dataStart, data
        <p className='resume_iLearned'>{studyInfo}</p> 
 
         </div>
-        
      
     </div>
   )

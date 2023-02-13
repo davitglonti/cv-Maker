@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import '../CssFiles/education.css'
 import { useForm } from "react-hook-form";
 import { BiError } from 'react-icons/bi';
-const Education = ({University,Quality,studyDate,studyinfo}) => {
+const Education = ({University,Quality,studyDate,studyinfo,EndPage}) => {
     const [degree ,setDegree]=useState([])
     //const [select,setSelect]=useState()
    //console.log(select)
@@ -15,7 +15,7 @@ const Education = ({University,Quality,studyDate,studyinfo}) => {
       const onSubmit = (data) => {
         console.log(data);
       }; // your form submit function which will invoke after successful validation
-      console.log(watch("example")); // you can watch individual input by pass the name of the input
+      //console.log(watch("example")); // you can watch individual input by pass the name of the input
     
       useEffect(() => {
         fetch(`https://resume.redberryinternship.ge/api/degrees`)
@@ -30,7 +30,7 @@ const Education = ({University,Quality,studyDate,studyinfo}) => {
     {/* register your input into the hook by invoking the "register" function */}
     <div className='input_namelastname'>
         <div >
-   <label style={{position:'relative', width:'371px'}} className={errors.name ? "label-error": ''}> სასწავლებელი  
+   <label style={{position:'relative', width:'700px'}} className={errors.name ? "label-error": ''}> სასწავლებელი  
  
     <input   {...register("name",{ required: true, minLength:2})} onChange={(e)=>University(e.target.value)} />
     <h5  className='input_info'>მინიმუმ 2 სიმბოლო  </h5>
@@ -45,9 +45,9 @@ const Education = ({University,Quality,studyDate,studyinfo}) => {
         
     <div className='input_namelastname'>
       <div >
-        <label for="standard-select" className='selecthead'>ხარისხი</label>
-        <select className="select" value={Quality} onChange={(e)=>Quality(e.target.value)}>
-            <option value="" selected disabled hidden>აირჩიე ხარისხი</option>
+        <label  className='selecthead'>ხარისხი</label>
+        <select   className="select" defaultValue={Quality} onChange={(e)=>Quality(e.target.value)} >
+            <option value="" disabled >აირჩიე ხარისხი</option>
             {degree.map((item,index)=>{
                 return (
                     <option  key={index}>{item.title}</option>
@@ -60,7 +60,7 @@ const Education = ({University,Quality,studyDate,studyinfo}) => {
     
     {/* include validation with required or other standard HTML validation rules */}
     <div>
-   <label style={{position:'relative', width:'371px'}} className={errors.exampleRequired && "label-error"}>დამთავრების თარიღი 
+   <label style={{position:'relative', width:'284px', top:'10px'}} className={errors.exampleRequired && "label-error"}>დამთავრების თარიღი 
     <input type='date' {...register("exampleRequired", { required: true,minLength:2, })} onChange={(e)=>studyDate(e.target.value)} />
     <h5  className='input_info'>მინიმუმ 2 ასო, ქართული ასოები</h5>
     {/* errors will return when field validation fails  */}
@@ -75,7 +75,7 @@ const Education = ({University,Quality,studyDate,studyinfo}) => {
 
         
 
-    <button type="submit"  className='submit'><h5 className='btn_txt'>შემდეგ</h5> </button>
+    <button type="submit"  className='prevBtn' ><h5 className='buttontext' onClick={EndPage}>შემდეგ</h5> </button>
   </form>
     </div>
   )

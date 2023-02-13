@@ -3,32 +3,34 @@ import { BiError } from 'react-icons/bi';
 
 import '../CssFiles/personal.css'
 import { useForm } from "react-hook-form";
-const Personal = ({name,lastname,aboutMe,email,phoneNumber,image,pageNumber,setPageNumber,binary}) => {
-  //const [binary, setBinary] = useState("");
-  console.log(pageNumber)
-
+const Personal = ({name,lastname,aboutMe,email,phoneNumber,image,personalCheck,binary}) => {
+  
   const handleImageChange = (event) => {
-    
+     image(event.target.files[0])
+     const fr = new FileReader();
+
+      fr.readAsDataURL(event.target.files[0]);
+      fr.addEventListener('load',()=>{
+        binary(fr.result)
+  })
+  };
+  
+ /*
+const [aaaj,setAaaj]=useState()
+console.log(aaaj)
+  const handleUploadImage=(event)=>{
+    image(event.target.files[0])
     const file = event.target.files[0];
     const reader = new FileReader();
-    binary(event)
-    image(event.target.files[0])
+    reader.readAsDataURL(file);
     reader.onloadend = () => {
-      binary(Array.from(new Uint8Array(reader.result)).map(
-        (b) => b.toString(2).padStart(8, "0")
-      ).join(""));
-      
+      binary({
+        image: URL.createObjectURL(file[0]),
+        userImage: reader.result,
+      });
     };
-
-    reader.readAsArrayBuffer(file);
-  };
-
-
-  
-  const personalCheck = () => {
-   console.log('aa')
-   setPageNumber(pageNumber+1)
   }
+  */
 
     const {
         register,
@@ -94,29 +96,8 @@ const Personal = ({name,lastname,aboutMe,email,phoneNumber,image,pageNumber,setP
     {errors.mobilenumber && <BiError className='errormessage'/>}
 </label>
 
-    <button type="submit" className='submit' ><h5 className='btn_txt' onClick={()=>personalCheck()}>შემდეგ</h5> </button>
+    <button type="submit" className='prevBtn' ><h5 className='buttontext' onClick={()=>personalCheck()}>შემდეგ</h5> </button>
   </form>
-/*
-    <div className='personal'>
-       <AiOutlineLeft className='personal_left'/>
-
-       <div className='personal_form'>
-        <form action="/action_page">
-          <label htmlFor="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name.." />
-          <label htmlFor="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name.." />
-          <label htmlFor="country">Country</label>
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-          </select>
-          <input type="submit" defaultValue="Submit" />
-        </form>
-      </div>
-    </div>
-  */
 
   )
 }
