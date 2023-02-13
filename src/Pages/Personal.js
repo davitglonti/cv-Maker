@@ -3,10 +3,28 @@ import { BiError } from 'react-icons/bi';
 
 import '../CssFiles/personal.css'
 import { useForm } from "react-hook-form";
-const Personal = ({name,lastname,aboutMe,email,phoneNumber,image,pageNumber,setPageNumber}) => {
- 
+const Personal = ({name,lastname,aboutMe,email,phoneNumber,image,pageNumber,setPageNumber,binary}) => {
+  //const [binary, setBinary] = useState("");
   console.log(pageNumber)
 
+  const handleImageChange = (event) => {
+    
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    binary(event)
+    image(event.target.files[0])
+    reader.onloadend = () => {
+      binary(Array.from(new Uint8Array(reader.result)).map(
+        (b) => b.toString(2).padStart(8, "0")
+      ).join(""));
+      
+    };
+
+    reader.readAsArrayBuffer(file);
+  };
+
+
+  
   const personalCheck = () => {
    console.log('aa')
    setPageNumber(pageNumber+1)
@@ -51,7 +69,8 @@ const Personal = ({name,lastname,aboutMe,email,phoneNumber,image,pageNumber,setP
         <label>პირადი ფოტოს ატვირთვა</label>
       
         <label className="custom-file-upload">
-          <input type="file"  style={{display:"none"}} className={errors.email && "input-error"}  {...register("image", { required: true, })} onChange={(event)=>image(event.target.files[0])}/>
+          
+          <input type="file"  style={{display:"none"}} className={errors.email && "input-error"}  {...register("image", { required: true, })}   onChange={handleImageChange}/>  {/* onChange={(event)=>image(event.target.files[0])} */}
           <div className='upload_img'><h3 className='uploadtxt'>ატვირთვა</h3>  </div>
          {errors.image && <p>This field is required</p>}
         </label>

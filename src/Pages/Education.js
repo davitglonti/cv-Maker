@@ -2,10 +2,10 @@ import React,{useEffect,useState} from 'react'
 import '../CssFiles/education.css'
 import { useForm } from "react-hook-form";
 import { BiError } from 'react-icons/bi';
-const Education = () => {
+const Education = ({University,Quality,studyDate,studyinfo}) => {
     const [degree ,setDegree]=useState([])
-    const [select,setSelect]=useState()
-   console.log(select)
+    //const [select,setSelect]=useState()
+   //console.log(select)
     const {
         register,
         handleSubmit,
@@ -32,7 +32,7 @@ const Education = () => {
         <div >
    <label style={{position:'relative', width:'371px'}} className={errors.name ? "label-error": ''}> სასწავლებელი  
  
-    <input   {...register("name",{ required: true, minLength:2})} onChange={(e)=>setSelect(e.target.value)}/>
+    <input   {...register("name",{ required: true, minLength:2})} onChange={(e)=>University(e.target.value)} />
     <h5  className='input_info'>მინიმუმ 2 სიმბოლო  </h5>
     {errors.name && <BiError className='errormessage'/>}
  </label>
@@ -44,25 +44,24 @@ const Education = () => {
     </div>
         
     <div className='input_namelastname'>
-        <div >
-        <label for="standard-select" className='selecthead'>Standard Select</label>
-        <select className="select" value={select} onChange={(e)=>setSelect(e.target.value)}>
-        <option value="" selected disabled hidden>აირჩიე ხარისხი</option>
-        {degree.map(item=>{
-            return (
-                 <option >{item.title}</option>
-            )
-        })}
-   
-  </select>
+      <div >
+        <label for="standard-select" className='selecthead'>ხარისხი</label>
+        <select className="select" value={Quality} onChange={(e)=>Quality(e.target.value)}>
+            <option value="" selected disabled hidden>აირჩიე ხარისხი</option>
+            {degree.map((item,index)=>{
+                return (
+                    <option  key={index}>{item.title}</option>
+                )
+            })}
+        </select>
  
     
-    </div>
+      </div>
     
     {/* include validation with required or other standard HTML validation rules */}
     <div>
    <label style={{position:'relative', width:'371px'}} className={errors.exampleRequired && "label-error"}>დამთავრების თარიღი 
-    <input type='date' {...register("exampleRequired", { required: true,minLength:2, pattern:/[ა-ჰ]/ })} onChange={(e)=>console.log(e.target.value)} />
+    <input type='date' {...register("exampleRequired", { required: true,minLength:2, })} onChange={(e)=>studyDate(e.target.value)} />
     <h5  className='input_info'>მინიმუმ 2 ასო, ქართული ასოები</h5>
     {/* errors will return when field validation fails  */}
     {errors.exampleRequired && <BiError className='errormessage'/>}
@@ -71,12 +70,12 @@ const Education = () => {
     </div>
 
         <label className="custom-file-upload">აღწერა </label>
-          <input type="text"  className='Aboutme' onChange={(e)=>console.log(e.target.value)} />
+          <input type="text"  className='Aboutme' onChange={(e)=>studyinfo(e.target.value)} />
          
 
         
 
-    <button type="submit"  ><h5 className='btn_txt'>შემდეგ</h5> </button>
+    <button type="submit"  className='submit'><h5 className='btn_txt'>შემდეგ</h5> </button>
   </form>
     </div>
   )

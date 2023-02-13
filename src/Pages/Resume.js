@@ -2,7 +2,7 @@ import React from 'react'
 import '../CssFiles/resume.css'
 import emailIcon from '../images/Vector (2).png'
 import phoneIcon from '../images/Vector (1).png'
-const Resume = ({name,lastName,email,phoneNumber,image,aboutinfo,dataStart, dataEnd,experienceInfo,University,studyDate,studyinfo,position,employer}) => {
+const Resume = ({name,lastName,email,phoneNumber,image,aboutinfo,dataStart, dataEnd,experienceInfo,University,position,employer,Quality,studyDate,studyInfo}) => {
 
   return (
     <div className='resume'>
@@ -53,11 +53,11 @@ const Resume = ({name,lastName,email,phoneNumber,image,aboutinfo,dataStart, data
        <h1 className='resume_education'>განათლება</h1>
       
        <h2 className='resume_univesity'>{University}</h2>
-       <h2 className='resume_role'>სტუდენტი</h2>
+       <h2 className='resume_role'>{Quality}</h2>
        </>
         )}
        <h3 className='resume_Periodofstudy'>{studyDate} </h3>
-       <p className='resume_iLearned'>{studyinfo}</p>
+       <p className='resume_iLearned'>{studyInfo}</p> 
 
         </div>
         

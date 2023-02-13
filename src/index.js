@@ -7,6 +7,7 @@ import Personal from './Pages/Personal';
 import Resume from './Pages/Resume';
 import Experience from './Pages/Experience';
 import HeadPage from './Pages/HeadPage';
+import Sacdel from './Pages/Sacdel';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
